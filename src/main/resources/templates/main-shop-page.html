@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>bitlab shop</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">BITLAB SHOP</div>
+                <nav>
+                    <a class="nav-link" href="#">Top Sales</a>
+                    <a class="nav-link" href="#">New Sales</a>
+                    <a class="nav-link" href="#">By Category</a>
+                    <a class="nav-link" th:href="@{'/shop-login'}">Sign in</a>
+                    <a class="nav-link" th:href="@{'/register'}">Create new account</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <dvi class="intro">
+        <div class="container">
+            <div class="title">Welcome to BITLAB SHOP</div>
+            <div class="sub-title">Electronic devices with high quality and service</div>
+        </div>
+    </dvi>
+
+    <div class="info">
+        <div class="container">
+            <form th:action="@{'/shop-login'}" method="get">
+                <div class="cards">
+                    <div class="card" th:each="it : ${items}">
+                        <div class="card-name" th:text="${it.getName()}"></div>
+                        <div class="card-description">
+                            <div class="price" th:text="${it.getPrice()} + '$'"></div>
+                            <div class="ram" th:text="${it.getDescription().getRam()}"></div>
+                            <div class="memory" th:text="${it.getDescription().getMemory()}"></div>
+                            <div class="processor" th:text="${it.getDescription().getProcessor()}"></div>
+                        </div>
+                        <button class="btn">Buy Now</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
