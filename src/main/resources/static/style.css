@@ -71,6 +71,7 @@ a {
     border-radius: 10px;
     margin-bottom: 40px;
     box-shadow: 0 0 7px rgb(0 0 0 / 50%);
+    background: white;
 }
 
 .cards {
@@ -101,12 +102,16 @@ a {
 }
 
 .processor {
-    padding-bottom: 47px;
+    padding-bottom: 28px;
+}
+
+.button {
+    text-align: center;
 }
 
 .btn {
     border-radius: 10px;
-    width: 100%;
+    width: 230px;
     height: 25px;
     background: gainsboro;
     border: none;

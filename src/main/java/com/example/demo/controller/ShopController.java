@@ -15,7 +15,7 @@ import java.util.ArrayList;
 @Controller
 public class ShopController {
 
-    @GetMapping(value = "/main-shop-page")
+    @GetMapping(value = "/")
     public String getMainPage(Model model){
 
         ArrayList<Items> items = DBManager.getItems();
@@ -24,10 +24,10 @@ public class ShopController {
         return "/main-shop-page";
     }
 
-    @GetMapping(value = "/main-shop-page")
-    public String getSign(){
-        return "redirect:/main-shop-page";
-    }
+//    @GetMapping(value = "/")
+//    public String getSign(){
+//        return "redirect:/main-shop-page";
+//    }
 
     @GetMapping(value = "/shop-login")
     public String getLogin(){
@@ -51,7 +51,7 @@ public class ShopController {
 
     @GetMapping(value = "/logout")
     public String logout(){
-        return "redirect:/main-shop-page";
+        return "redirect:/";
     }
 
 
