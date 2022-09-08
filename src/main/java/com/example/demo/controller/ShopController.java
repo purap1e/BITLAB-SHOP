@@ -24,7 +24,7 @@ public class ShopController {
         return "/main-shop-page";
     }
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/main-shop-page")
     public String getSign(){
         return "redirect:/main-shop-page";
     }
@@ -46,7 +46,7 @@ public class ShopController {
                 return "/main-shop-page-loged";
             }
         }
-        return "/";
+        return "/main-shop-page";
     }
 
     @GetMapping(value = "/logout")
@@ -77,6 +77,6 @@ public class ShopController {
                 return "/main-shop-page-loged";
             }
         }
-        return "/";
+        return "/main-shop-page";
     }
 }

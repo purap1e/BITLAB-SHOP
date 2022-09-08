@@ -6,12 +6,13 @@ import com.example.demo.shop.Logins;
 import com.example.demo.student.Student;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class DBManager {
 
-    private static ArrayList<Student> students = new ArrayList<>();
-    private static ArrayList<Items> items = new ArrayList<>();
-    private static ArrayList<Logins> logins = new ArrayList<>();
+    private static final ArrayList<Student> students = new ArrayList<>();
+    private static final ArrayList<Items> items = new ArrayList<>();
+    private static final ArrayList<Logins> logins = new ArrayList<>();
     private static Long id = 3L;
     private static Long idShop = 7L;
     private static Long idLogins = 3L;
@@ -68,7 +69,7 @@ public class DBManager {
 
     public static Items getItem(Long id){
         for(Items it: items){
-            if (it.getId()==id) return it;
+            if (Objects.equals(it.getId(), id)) return it;
         }
         return null;
     }
