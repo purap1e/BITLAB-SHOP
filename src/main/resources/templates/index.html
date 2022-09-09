@@ -7,57 +7,50 @@
     <title>Title</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+<!--            <a class="navbar-brand" href="#">Navbar</a>-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{'/index'}">Student List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{'/addStudent'}">Add Student</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="row mt-5">
-            <div class="col-6 offset-3">
-                <form th:action="@{'/addStudent'}" method="post">
-                    <div class="form-group">
-                        <label>
-                            Name:
-                        </label>
-                        <input type="text" name="name" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            Email:
-                        </label>
-                        <input type="email" name="email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            Age:
-                        </label>
-                        <input type="number" name="age" class="form-control" value="0" min="0">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-success">ADD ITEM</button>
-                    </div>
-                </form>
-            </div>
-
-            <div class="row mt-5">
-                <div class="col-12">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>NAME</th>
-                                <th>EMAIL</th>
-                                <th>AGE</th>
-                                <th>DETAILS</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr th:each = "st : ${students}">
-                                <td th:text = "${st.id}"></td>
-                                <td th:text = "${st.name}"></td>
-                                <td th:text = "${st.email}"></td>
-                                <td th:text = "${st.age}"></td>
-                                <td><a th:href="@{'/details/' + ${st.id}}" class="btn btn-info">details</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>SURNAME</th>
+                            <th>EMAIL</th>
+                            <th>EXAM</th>
+                            <th>MARK</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each = "st : ${students}">
+                            <td th:text = "${st.id}"></td>
+                            <td th:text = "${st.name}"></td>
+                            <td th:text = "${st.surname}"></td>
+                            <td th:text = "${st.email}"></td>
+                            <td th:text = "${st.exam}"></td>
+                            <td th:text = "${st.mark}"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
